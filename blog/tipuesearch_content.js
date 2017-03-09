@@ -1,0 +1,1 @@
+var tipuesearch = {"pages":[{"tags":"misc","title":"About","text":"2016Fall 修課成員網誌","url":"./pages/about/"},{"tags":"作業","title":"第一周作業作業","text":"四連桿繪製 from juu hong cheng on Vimeo .","url":"./di-yi-zhou-zuo-ye-zuo-ye.html"}]};
