@@ -18,8 +18,13 @@
 &lt;p&gt;利用onshape組立八連桿&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/5jd1lyBWcv0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;四連桿轉入vrep.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/AVuu0LNZgJs" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</summary><category term="簡報"></category></entry><entry><title>第五周作業作業</title><link href="./di-wu-zhou-zuo-ye-zuo-ye.html" rel="alternate"></link><published>2017-03-30T12:08:00+08:00</published><updated>2017-03-30T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-03-30:./di-wu-zhou-zuo-ye-zuo-ye.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+&lt;p&gt;四連桿轉入vrep&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/AVuu0LNZgJs" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;八連趕轉入vrep&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/6q6JAIPigk8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;心得:四連趕要組立的話不難，轉入vrep做動也不難，可是換到8連桿的時候，雖零件只是多了點，組裝也是容易上手，但是轉入vrep做動的時候加入轉軸，使用dummy的時候真的花了一番功夫&lt;/p&gt;</summary><category term="簡報"></category></entry><entry><title>第五周作業作業</title><link href="./di-wu-zhou-zuo-ye-zuo-ye.html" rel="alternate"></link><published>2017-03-30T12:08:00+08:00</published><updated>2017-03-30T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-03-30:./di-wu-zhou-zuo-ye-zuo-ye.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;h2&gt;利用v-rep設定單連桿運動&lt;/h2&gt;
 &lt;p&gt;v-rep設定單連桿運動影片&lt;/p&gt;
@@ -32,7 +37,7 @@
 &lt;li&gt;為各班各組在 https://mde2a2.kmol.info 主機上建立 cdg5, 用來管理各組協同產品設計實習過程中的純文件檔案,建立各週wiki&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;HYPERWORKS安裝心得&lt;/h2&gt;
-&lt;p&gt;安裝此套件非常複雜，需要先辦帳號辦完還不能馬上下載，他會寄一組網址到你的信箱，要去信箱收件打開才能下載&lt;/p&gt;
+&lt;p&gt;安裝此套件非常複雜，需要先辦帳號辦完還不能馬上下載，他會寄一組網址到你的信箱，要去信箱收件打開才能下載，而且他還必須下載一個HyperWorks Student Edition的 License這個沒下載的話會一直顯示出找不到 &lt;/p&gt;
 &lt;p&gt;hyperworks下載&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/tmuroV_YeYE" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</summary><category term="簡報"></category></entry><entry><title>第三周作業作業</title><link href="./di-san-zhou-zuo-ye-zuo-ye.html" rel="alternate"></link><published>2017-03-17T12:08:00+08:00</published><updated>2017-03-17T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-03-17:./di-san-zhou-zuo-ye-zuo-ye.html</id><summary type="html">&lt;p&gt;繪製四連趕機構，以 Solvespace 輸入該三角形頂點運動軌跡&lt;/p&gt;
 
