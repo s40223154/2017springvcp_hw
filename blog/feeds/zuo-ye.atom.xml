@@ -2,6 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall 電腦輔助設計實習 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/zuo-ye.atom.xml" rel="self"></link><id>./</id><updated>2017-04-27T11:00:00+08:00</updated><entry><title>第十周作業</title><link href="./brython-programming.html" rel="alternate"></link><published>2017-04-27T11:00:00+08:00</published><updated>2017-04-27T11:00:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-04-27:./brython-programming.html</id><summary type="html">&lt;p&gt;brython&lt;/p&gt;
 
 
+&lt;p&gt;本週利用程式撰寫加減乘除 以下&lt;/p&gt;
+&lt;p&gt;加法: def add (a,b):&lt;/p&gt;
+&lt;p&gt;return a+b
+減法: def add (a,b):&lt;/p&gt;
+&lt;p&gt;return a-b
+乘法: def add (a,b):&lt;/p&gt;
+&lt;p&gt;return a*b
+除法: def add (a,b):&lt;/p&gt;
+&lt;p&gt;return a+b
+再利用 import sys&lt;/p&gt;
+&lt;p&gt;sys.path.append("./m1")&lt;/p&gt;
+&lt;p&gt;import add&lt;/p&gt;
+&lt;p&gt;sum = add.add(5,2)&lt;/p&gt;
+&lt;p&gt;print(sum)&lt;/p&gt;
+&lt;p&gt;去執行上面的計算&lt;/p&gt;
+&lt;p&gt;分類存成.py檔案&lt;/p&gt;
+&lt;p&gt;例如把+法存成add&lt;/p&gt;
+&lt;p&gt;執行檔第三行import就要import add&lt;/p&gt;
+&lt;p&gt;sum = 也用 add.add&lt;/p&gt;
+&lt;p&gt;如果乘法我存名稱mul&lt;/p&gt;
+&lt;p&gt;就import mul&lt;/p&gt;
+&lt;p&gt;sum = mul.mul&lt;/p&gt;
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
 
 &lt;script src="../data/Brython-3.3.1/brython.js"&gt;&lt;/script&gt;
