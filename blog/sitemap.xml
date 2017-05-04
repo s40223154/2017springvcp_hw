@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./</loc>
-<lastmod>2017-05-04T10:34:36-00:00</lastmod>
+<lastmod>2017-05-04T11:31:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./archives.html</loc>
-<lastmod>2017-05-04T10:34:36-00:00</lastmod>
+<lastmod>2017-05-04T11:31:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tags.html</loc>
-<lastmod>2017-05-04T10:34:36-00:00</lastmod>
+<lastmod>2017-05-04T11:31:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./categories.html</loc>
-<lastmod>2017-05-04T10:34:36-00:00</lastmod>
+<lastmod>2017-05-04T11:31:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./pages/about/</loc>
-<lastmod>2017-05-04T10:31:02+08:00</lastmod>
+<lastmod>2017-05-04T11:27:15+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./di-shi-zhou-zuo-ye-1.html</loc>
+<lastmod>2017-04-30T12:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -95,6 +102,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>./category/hw.html</loc>
+<lastmod>2017-04-30T12:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>./category/zuo-ye.html</loc>
 <lastmod>2017-04-27T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -116,8 +130,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>./tag/hw.html</loc>
+<lastmod>2017-04-30T12:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>./author/40223154.html</loc>
-<lastmod>2017-04-27T11:00:00+08:06</lastmod>
+<lastmod>2017-04-30T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
