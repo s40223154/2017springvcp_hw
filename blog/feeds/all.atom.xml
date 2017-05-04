@@ -1,70 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall 電腦輔助設計實習 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2017-04-27T11:00:00+08:00</updated><entry><title>第10周作業</title><link href="./brython-programming.html" rel="alternate"></link><published>2017-04-27T11:00:00+08:00</published><updated>2017-04-27T11:00:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-04-27:./brython-programming.html</id><summary type="html">&lt;p&gt;brython&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall 電腦輔助設計實習 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2017-04-27T11:00:00+08:00</updated><entry><title>第十周作業</title><link href="./brython-programming.html" rel="alternate"></link><published>2017-04-27T11:00:00+08:00</published><updated>2017-04-27T11:00:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-04-27:./brython-programming.html</id><summary type="html">&lt;p&gt;brython&lt;/p&gt;
 
 
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
 
-&lt;script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
-&lt;/script&gt;
+&lt;script src="../data/Brython-3.3.1/brython.js"&gt;&lt;/script&gt;
+
+&lt;script src="../data/Brython-3.3.1/brython_stdlib.js"&gt;&lt;/script&gt;
 
 &lt;!-- 啟動 Brython --&gt;
 
 &lt;script&gt;
 window.onload=function(){
-brython(1);
+// 設定 data/py 為共用程式路徑
+brython({debug:1, pythonpath:['./../cdw10']});
 }
 &lt;/script&gt;
 
-&lt;!-- 以下實際利用  Brython 程式--&gt;
+&lt;!-- 以下實際利用  Brython 畫四連桿 trace point 路徑--&gt;
 
-&lt;canvas id="guitarchord" width="600" height="400"&gt;&lt;/canvas&gt;
+&lt;!--&lt;canvas id="w10" width="800" height="600"&gt;&lt;/canvas&gt;--&gt;
+
+&lt;div id="container" width="600" height="400"&gt;&lt;/div&gt;
 
 &lt;script type="text/python3"&gt;
 from browser import document as doc
+from browser import html
 import math
+import add
+container = doc['container']
 
-canvas = doc["guitarchord"]
-ctx = canvas.getContext("2d")
+degree = math.pi/180
+'''
+a = input("give me a")
+'''
+a = 1
+b = 2
+sum = add.add(a, b)
+container &lt;= str(math.cos(60*degree)+float(sum))
+#print("ok")
 
+'''
+# First of all, the import of some libraries
+from browser import document as doc
+from browser import html
 
-def add(x, y):
-    """This function adds two numbers """
-    return x + y
+# All the elements will be inserted in the div with the "container" id
+container = doc['container']
 
-def subtract(x, y):
-    """This function subtracts two numbers"""
-    return x - y
+# We create a new div element
+newdiv = html.DIV(id = "new-div")
+# Now we add some style
+newdiv.style = {"padding": "5px", 
+               "backgroundColor": "#ADD8E6"}
 
-def multiply(x, y):
-    """ This function multiplies two numbers"""
-    return x * y
+# Now, lets add a table with a column with numbers and a
+# column with a word on each cell
+text = "Brython is really cool"
+textlist = text.split()
+table = html.TABLE()
+for i, word in enumerate(textlist):
+    table &lt;= html.TR(html.TD(i + 1) + 
+                     html.TD(word))
+# Now we add some style to the table
+table.style = {"padding": "5px", 
+               "backgroundColor": "#aaaaaa",
+               "width": "100%"}
+# Now we add the table to the new div previously created
+newdiv &lt;= table + html.BR()
 
-def divide(x, y):
-    """This function divides two numbers"""
-    return x * y
+# a form? why not?
+form = html.FORM()
+input1 = html.INPUT(type="text", name="firstname", value="First name")
+input2 = html.INPUT(type="text", name="lastname", value="Last name")
+input3 = html.BUTTON("Button with no action!")
+form &lt;= input1 + html.BR() + input2 + html.BR() + input3
 
-    print("Select operation.")
-print("1.Add")
-print("2.Subtract")
-print("3.Multiply")
-print("4.Divide")
+newdiv &lt;= form + html.BR()
 
-choice = eval(input("Enter choice(1/2/3/4):"))
+# Finally, we will add something more 'HTML5istic', a canvas with
+# a color gradient in the newdiv previously created and below the form
+canvas = html.CANVAS(width = 300, height = 300)
+canvas.style = {"width": "100%"}
+ctx = canvas.getContext('2d')
+ctx.rect(0, 0, 300, 300)
+grd = ctx.createRadialGradient(150, 150, 10, 150, 150, 150)
+grd.addColorStop(0, '#8ED6FF')
+grd.addColorStop(1, '#004CB3')
+ctx.fillStyle = grd
+ctx.fill()
 
-num1 = int(eval(input("Enter first number: ")))
-num2 = int(eval(input("Enter second number: ")))
+newdiv &lt;= canvas
 
-if choice == 1:
-    print(num1, "+", num2, "=", add(num1, num2))
-elif choice == 2:
-    print((num1, "-", num2, "=", subtract(num1, num2)))
-elif choice == '3':
-    print((num1, "*", num2, "=", multiply(num1, num2)))
-elif choice == '4':
-    print((num1, "/", num2, "=", divide(num1, num2)))
-else:
-    print("Invalid input")</summary><category term="brython w10"></category></entry><entry><title>第七周作業作業</title><link href="./di-qi-zhou-zuo-ye-zuo-ye.html" rel="alternate"></link><published>2017-04-06T12:08:00+08:00</published><updated>2017-04-06T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-04-06:./di-qi-zhou-zuo-ye-zuo-ye.html</id><summary type="html"></summary><category term="簡報"></category></entry><entry><title>第六周作業作業</title><link href="./di-liu-zhou-zuo-ye-zuo-ye.html" rel="alternate"></link><published>2017-04-04T11:44:00+08:00</published><updated>2017-04-04T11:44:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-04-04:./di-liu-zhou-zuo-ye-zuo-ye.html</id><summary type="html">&lt;p&gt;1.利用onshape畫出四連桿以及八連桿
+# And finally we append the newdiv element
+# to the parent, in this case the div with the "container" id
+container &lt;= newdiv
+'''
+&lt;/script&gt;</summary><category term="brython w10"></category></entry><entry><title>第七周作業</title><link href="./di-qi-zhou-zuo-ye.html" rel="alternate"></link><published>2017-04-06T12:08:00+08:00</published><updated>2017-04-06T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-04-06:./di-qi-zhou-zuo-ye.html</id><summary type="html"></summary><category term="簡報"></category></entry><entry><title>第六周作業</title><link href="./di-liu-zhou-zuo-ye.html" rel="alternate"></link><published>2017-04-04T11:44:00+08:00</published><updated>2017-04-04T11:44:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-04-04:./di-liu-zhou-zuo-ye.html</id><summary type="html">&lt;p&gt;1.利用onshape畫出四連桿以及八連桿
 2.將畫好的零件利用v-rep做連桿動作模擬
 拍出各連桿感安裝組立影片&lt;/p&gt;
 
@@ -92,7 +124,7 @@ else:
 &lt;p&gt;八連趕轉入vrep&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/6q6JAIPigk8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;心得:四連趕要組立的話不難，轉入vrep做動也不難，可是換到8連桿的時候，雖零件只是多了點，組裝也是容易上手，但是轉入vrep做動的時候加入轉軸，使用dummy的時候真的花了一番功夫&lt;/p&gt;</summary><category term="簡報"></category></entry><entry><title>第五周作業作業</title><link href="./di-wu-zhou-zuo-ye-zuo-ye.html" rel="alternate"></link><published>2017-03-30T12:08:00+08:00</published><updated>2017-03-30T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-03-30:./di-wu-zhou-zuo-ye-zuo-ye.html</id><summary type="html">&lt;p&gt;利用v-rep設定單連桿運動
+&lt;p&gt;心得:四連趕要組立的話不難，轉入vrep做動也不難，可是換到8連桿的時候，雖零件只是多了點，組裝也是容易上手，但是轉入vrep做動的時候加入轉軸，使用dummy的時候真的花了一番功夫&lt;/p&gt;</summary><category term="簡報"></category></entry><entry><title>第五周作業</title><link href="./di-wu-zhou-zuo-ye.html" rel="alternate"></link><published>2017-03-30T12:08:00+08:00</published><updated>2017-03-30T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-03-30:./di-wu-zhou-zuo-ye.html</id><summary type="html">&lt;p&gt;利用v-rep設定單連桿運動
 v-rep設定單連桿運動影片
 本週製作心得&lt;/p&gt;
 
@@ -101,7 +133,7 @@ v-rep設定單連桿運動影片
 &lt;p&gt;v-rep設定單連桿運動影片&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/z-99nY8QvVI" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;心得:剛開始看老師東設定西設定的時候覺得很複雜，但自己回去看影片聽老是講解要設定軸，轉速時其實覺得並沒有當下的複雜。&lt;/p&gt;</summary><category term="簡報"></category></entry><entry><title>第四周作業作業</title><link href="./di-si-zhou-zuo-ye-zuo-ye.html" rel="alternate"></link><published>2017-03-24T12:08:00+08:00</published><updated>2017-03-24T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-03-24:./di-si-zhou-zuo-ye-zuo-ye.html</id><summary type="html">&lt;p&gt;Hyperworks 套件過程與心得 
+&lt;p&gt;心得:剛開始看老師東設定西設定的時候覺得很複雜，但自己回去看影片聽老是講解要設定軸，轉速時其實覺得並沒有當下的複雜。&lt;/p&gt;</summary><category term="簡報"></category></entry><entry><title>第四周作業</title><link href="./di-si-zhou-zuo-ye.html" rel="alternate"></link><published>2017-03-24T12:08:00+08:00</published><updated>2017-03-24T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-03-24:./di-si-zhou-zuo-ye.html</id><summary type="html">&lt;p&gt;Hyperworks 套件過程與心得 
 hyperworks下載影片&lt;/p&gt;
 
 
@@ -112,7 +144,7 @@ hyperworks下載影片&lt;/p&gt;
 &lt;h2&gt;HYPERWORKS安裝心得&lt;/h2&gt;
 &lt;p&gt;安裝此套件非常複雜，需要先辦帳號辦完還不能馬上下載，他會寄一組網址到你的信箱，要去信箱收件打開才能下載，而且他還必須下載一個HyperWorks Student Edition的 License這個沒下載的話會一直顯示出找不到 &lt;/p&gt;
 &lt;p&gt;hyperworks下載&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/tmuroV_YeYE" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</summary><category term="簡報"></category></entry><entry><title>第三周作業作業</title><link href="./di-san-zhou-zuo-ye-zuo-ye.html" rel="alternate"></link><published>2017-03-17T12:08:00+08:00</published><updated>2017-03-17T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-03-17:./di-san-zhou-zuo-ye-zuo-ye.html</id><summary type="html">&lt;p&gt;完成 Solvespace 30-50-60 cm
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/tmuroV_YeYE" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</summary><category term="簡報"></category></entry><entry><title>第三周作業</title><link href="./di-san-zhou-zuo-ye.html" rel="alternate"></link><published>2017-03-17T12:08:00+08:00</published><updated>2017-03-17T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-03-17:./di-san-zhou-zuo-ye.html</id><summary type="html">&lt;p&gt;完成 Solvespace 30-50-60 cm
 Hyperworks逐字翻譯&lt;/p&gt;
 
 
@@ -135,7 +167,7 @@ modifications in the future and will continue to support those as we go
 forward people are going to find a very light very unencumbered and very few mouse
 clicks get their jobs done we're really excited.&lt;/p&gt;
 &lt;p&gt;我們今年的另一個大舉措，我們開始統一所有hyperworks產品進入一個普通的用戶體驗開始幾年前與推出的靈感產品，但即使當我們開發的產品，我們都有
-產品在心，所以我們已經在過去的幾年，一直為sim實驗室開發同樣的用戶體驗虛擬風洞超拉伸，現在我們採用hypermesh本身，使用起來非常簡單，走到了我們在靈感中使用的功能區結構，我們已經使模型通過圖形工作更直接不用依靠面板做你大部分工作，我們使用簡單的指南和對話，所以你不用直接在屏幕上工作的圖形和大量的圖形操作，它是一個異乎尋常的新用戶界面，是真正的東西，你會期望從現代軟件，簡單的剪切複製黏貼右鍵菜單等，真正好的質量圖形有一個完全可配置的菜單系統，所以你可以自定義帶到你自己的需要，你想以舊的方式工作，我們沒有採取任何東西，這是一個非常重要的一點，因為這個新的用戶界面是建立在現有的hypermesh核心架構所有的菜單系統和自動化，人們已經發展了多年將與沒有工作在未來的修改，並將繼續支持那些我們去前進的人會找到一個非常輕的非常沒有阻礙和非常少的鼠標獲得他們的工作，我們真的很興奮。&lt;/p&gt;</summary><category term="簡報"></category></entry><entry><title>第二周作業作業</title><link href="./di-er-zhou-zuo-ye-zuo-ye.html" rel="alternate"></link><published>2017-03-09T12:08:00+08:00</published><updated>2017-03-09T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-03-09:./di-er-zhou-zuo-ye-zuo-ye.html</id><summary type="html">&lt;p&gt;228連假沒上課&lt;/p&gt;
+產品在心，所以我們已經在過去的幾年，一直為sim實驗室開發同樣的用戶體驗虛擬風洞超拉伸，現在我們採用hypermesh本身，使用起來非常簡單，走到了我們在靈感中使用的功能區結構，我們已經使模型通過圖形工作更直接不用依靠面板做你大部分工作，我們使用簡單的指南和對話，所以你不用直接在屏幕上工作的圖形和大量的圖形操作，它是一個異乎尋常的新用戶界面，是真正的東西，你會期望從現代軟件，簡單的剪切複製黏貼右鍵菜單等，真正好的質量圖形有一個完全可配置的菜單系統，所以你可以自定義帶到你自己的需要，你想以舊的方式工作，我們沒有採取任何東西，這是一個非常重要的一點，因為這個新的用戶界面是建立在現有的hypermesh核心架構所有的菜單系統和自動化，人們已經發展了多年將與沒有工作在未來的修改，並將繼續支持那些我們去前進的人會找到一個非常輕的非常沒有阻礙和非常少的鼠標獲得他們的工作，我們真的很興奮。&lt;/p&gt;</summary><category term="簡報"></category></entry><entry><title>第二周作業</title><link href="./di-er-zhou-zuo-ye.html" rel="alternate"></link><published>2017-03-09T12:08:00+08:00</published><updated>2017-03-09T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-03-09:./di-er-zhou-zuo-ye.html</id><summary type="html">&lt;p&gt;228連假沒上課&lt;/p&gt;
 
 
 &lt;p&gt;心得:本週繪製雖然跟第一週差異不大，可是這次適用新軟體，on shape他不需要安裝，他是一個開放的網頁晚體，他考以直接在網路上作畫，不要小看她雖然只是網頁的不過功能卻不輸給solidworks ,creo這些軟體使用起來也淺顯易懂，真的是一個很棒的東西&lt;/p&gt;
@@ -150,7 +182,7 @@ clicks get their jobs done we're really excited.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;個人影片:
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/o2hEqzxdxe0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/izhkLsM5l3c" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</summary><category term="簡報"></category></entry><entry><title>第一周作業作業</title><link href="./di-yi-zhou-zuo-ye-zuo-ye.html" rel="alternate"></link><published>2017-03-02T12:08:00+08:00</published><updated>2017-03-02T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-03-02:./di-yi-zhou-zuo-ye-zuo-ye.html</id><summary type="html">&lt;p&gt;四連桿繪製&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/izhkLsM5l3c" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</summary><category term="簡報"></category></entry><entry><title>第一周作業</title><link href="./di-yi-zhou-zuo-ye.html" rel="alternate"></link><published>2017-03-02T12:08:00+08:00</published><updated>2017-03-02T12:08:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-03-02:./di-yi-zhou-zuo-ye.html</id><summary type="html">&lt;p&gt;四連桿繪製&lt;/p&gt;
 
 
 &lt;iframe src="./../data/fourbar.html"width="800"height="600"/&gt;&lt;/iframe&gt;

@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>第10周作業 - 2016Fall 電腦輔助設計實習 (虎尾科大MDE)</title>
+    <title>第十周作業 - 2016Fall 電腦輔助設計實習 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -174,7 +174,7 @@ init_mathjax();
 
         <meta property="og:site_name" content="2016Fall 電腦輔助設計實習 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="第10周作業"/>
+        <meta property="og:title" content="第十周作業"/>
         <meta property="og:url" content="./brython-programming.html"/>
         <meta property="og:description" content="brython"/>
         <meta property="article:published_time" content="2017-04-27" />
@@ -289,8 +289,8 @@ init_mathjax();
                 <h1>
                     <a href="./brython-programming.html"
                        rel="bookmark"
-                       title="Permalink to 第10周作業">
-                        第10周作業
+                       title="Permalink to 第十周作業">
+                        第十周作業
                     </a>
                 </h1>
             </header>
@@ -317,67 +317,99 @@ init_mathjax();
 
 <!-- 導入 Brython 標準程式庫 -->
 
-<script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js">
-</script>
+<script src="../data/Brython-3.3.1/brython.js"></script>
+
+<script src="../data/Brython-3.3.1/brython_stdlib.js"></script>
 
 <!-- 啟動 Brython -->
 
 <script>
 window.onload=function(){
-brython(1);
+// 設定 data/py 為共用程式路徑
+brython({debug:1, pythonpath:['./../cdw10']});
 }
 </script>
 
-<!-- 以下實際利用  Brython 程式-->
+<!-- 以下實際利用  Brython 畫四連桿 trace point 路徑-->
 
-<canvas id="guitarchord" width="600" height="400"></canvas>
+<!--<canvas id="w10" width="800" height="600"></canvas>-->
+
+<div id="container" width="600" height="400"></div>
 
 <script type="text/python3">
 from browser import document as doc
+from browser import html
 import math
+import add
+container = doc['container']
 
-canvas = doc["guitarchord"]
-ctx = canvas.getContext("2d")
+degree = math.pi/180
+'''
+a = input("give me a")
+'''
+a = 1
+b = 2
+sum = add.add(a, b)
+container <= str(math.cos(60*degree)+float(sum))
+#print("ok")
 
+'''
+# First of all, the import of some libraries
+from browser import document as doc
+from browser import html
 
-def add(x, y):
-    """This function adds two numbers """
-    return x + y
+# All the elements will be inserted in the div with the "container" id
+container = doc['container']
 
-def subtract(x, y):
-    """This function subtracts two numbers"""
-    return x - y
+# We create a new div element
+newdiv = html.DIV(id = "new-div")
+# Now we add some style
+newdiv.style = {"padding": "5px", 
+               "backgroundColor": "#ADD8E6"}
 
-def multiply(x, y):
-    """ This function multiplies two numbers"""
-    return x * y
+# Now, lets add a table with a column with numbers and a
+# column with a word on each cell
+text = "Brython is really cool"
+textlist = text.split()
+table = html.TABLE()
+for i, word in enumerate(textlist):
+    table <= html.TR(html.TD(i + 1) + 
+                     html.TD(word))
+# Now we add some style to the table
+table.style = {"padding": "5px", 
+               "backgroundColor": "#aaaaaa",
+               "width": "100%"}
+# Now we add the table to the new div previously created
+newdiv <= table + html.BR()
 
-def divide(x, y):
-    """This function divides two numbers"""
-    return x * y
+# a form? why not?
+form = html.FORM()
+input1 = html.INPUT(type="text", name="firstname", value="First name")
+input2 = html.INPUT(type="text", name="lastname", value="Last name")
+input3 = html.BUTTON("Button with no action!")
+form <= input1 + html.BR() + input2 + html.BR() + input3
 
-    print("Select operation.")
-print("1.Add")
-print("2.Subtract")
-print("3.Multiply")
-print("4.Divide")
+newdiv <= form + html.BR()
 
-choice = eval(input("Enter choice(1/2/3/4):"))
+# Finally, we will add something more 'HTML5istic', a canvas with
+# a color gradient in the newdiv previously created and below the form
+canvas = html.CANVAS(width = 300, height = 300)
+canvas.style = {"width": "100%"}
+ctx = canvas.getContext('2d')
+ctx.rect(0, 0, 300, 300)
+grd = ctx.createRadialGradient(150, 150, 10, 150, 150, 150)
+grd.addColorStop(0, '#8ED6FF')
+grd.addColorStop(1, '#004CB3')
+ctx.fillStyle = grd
+ctx.fill()
 
-num1 = int(eval(input("Enter first number: ")))
-num2 = int(eval(input("Enter second number: ")))
+newdiv <= canvas
 
-if choice == 1:
-    print(num1, "+", num2, "=", add(num1, num2))
-elif choice == 2:
-    print((num1, "-", num2, "=", subtract(num1, num2)))
-elif choice == '3':
-    print((num1, "*", num2, "=", multiply(num1, num2)))
-elif choice == '4':
-    print((num1, "/", num2, "=", divide(num1, num2)))
-else:
-    print("Invalid input")
+# And finally we append the newdiv element
+# to the parent, in this case the div with the "container" id
+container <= newdiv
+'''
+</script>
             </div>
             <!-- /.entry-content -->
         </article>
@@ -394,27 +426,27 @@ else:
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
                         <a href="./brython-programming.html">
-                            第10周作業
+                            第十周作業
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="./di-qi-zhou-zuo-ye-zuo-ye.html">
-                            第七周作業作業
+                        <a href="./di-qi-zhou-zuo-ye.html">
+                            第七周作業
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="./di-liu-zhou-zuo-ye-zuo-ye.html">
-                            第六周作業作業
+                        <a href="./di-liu-zhou-zuo-ye.html">
+                            第六周作業
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="./di-wu-zhou-zuo-ye-zuo-ye.html">
-                            第五周作業作業
+                        <a href="./di-wu-zhou-zuo-ye.html">
+                            第五周作業
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="./di-si-zhou-zuo-ye-zuo-ye.html">
-                            第四周作業作業
+                        <a href="./di-si-zhou-zuo-ye.html">
+                            第四周作業
                         </a>
                     </li>
                 </ul>

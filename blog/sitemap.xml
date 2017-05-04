@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./</loc>
-<lastmod>2017-04-27T12:01:15-00:00</lastmod>
+<lastmod>2017-05-04T08:34:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./archives.html</loc>
-<lastmod>2017-04-27T12:01:15-00:00</lastmod>
+<lastmod>2017-05-04T08:34:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tags.html</loc>
-<lastmod>2017-04-27T12:01:15-00:00</lastmod>
+<lastmod>2017-05-04T08:34:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./categories.html</loc>
-<lastmod>2017-04-27T12:01:15-00:00</lastmod>
+<lastmod>2017-05-04T08:34:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./pages/about/</loc>
-<lastmod>2017-04-27T09:33:55+08:00</lastmod>
+<lastmod>2017-05-04T08:26:11+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -46,49 +46,49 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>./di-qi-zhou-zuo-ye-zuo-ye.html</loc>
+<loc>./di-qi-zhou-zuo-ye.html</loc>
 <lastmod>2017-04-06T12:08:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./di-liu-zhou-zuo-ye-zuo-ye.html</loc>
+<loc>./di-liu-zhou-zuo-ye.html</loc>
 <lastmod>2017-04-04T11:44:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./di-wu-zhou-zuo-ye-zuo-ye.html</loc>
+<loc>./di-wu-zhou-zuo-ye.html</loc>
 <lastmod>2017-03-30T12:08:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./di-si-zhou-zuo-ye-zuo-ye.html</loc>
+<loc>./di-si-zhou-zuo-ye.html</loc>
 <lastmod>2017-03-24T12:08:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./di-san-zhou-zuo-ye-zuo-ye.html</loc>
+<loc>./di-san-zhou-zuo-ye.html</loc>
 <lastmod>2017-03-17T12:08:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./di-er-zhou-zuo-ye-zuo-ye.html</loc>
+<loc>./di-er-zhou-zuo-ye.html</loc>
 <lastmod>2017-03-09T12:08:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./di-yi-zhou-zuo-ye-zuo-ye.html</loc>
+<loc>./di-yi-zhou-zuo-ye.html</loc>
 <lastmod>2017-03-02T12:08:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
@@ -102,15 +102,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>./tag/jian-bao.html</loc>
-<lastmod>2017-04-06T12:08:00+08:06</lastmod>
+<loc>./tag/brython-w10.html</loc>
+<lastmod>2017-04-27T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/brython-w10.html</loc>
-<lastmod>2017-04-27T11:00:00+08:06</lastmod>
+<loc>./tag/jian-bao.html</loc>
+<lastmod>2017-04-06T12:08:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
