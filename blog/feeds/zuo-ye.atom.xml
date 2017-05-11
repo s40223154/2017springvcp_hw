@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall 電腦輔助設計實習 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/zuo-ye.atom.xml" rel="self"></link><id>./</id><updated>2017-05-11T10:44:00+08:00</updated><entry><title>十二周作業</title><link href="./shi-er-zhou-zuo-ye.html" rel="alternate"></link><published>2017-05-11T10:44:00+08:00</published><updated>2017-05-11T10:44:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-05-11:./shi-er-zhou-zuo-ye.html</id><summary type="html">&lt;p&gt;齒輪各部位定義
 &lt;/p&gt;
-&lt;p&gt;利用漸開線原理, 以 Brython 繪製單一正齒輪廓:&lt;/p&gt;
+&lt;p&gt;利用漸開線原理, 以 Brython 繪製單(17t-11t-13t)正齒輪廓:&lt;/p&gt;
+&lt;p&gt;第1齒輪從順時鐘轉 90 度之後, 必須配合目前的標記線所作
+地2齒要配合第一齒逆時針90度之後要在+上原本的一齒所以(-90&lt;em&gt;deg-math.pi/n11)
+第3齒要配合第2齒+原本一齒(-90&lt;/em&gt;deg-math.pi/n13)之後再配合第一齒+上半圈扣掉第一齒輪的1齒在乘上n11/n13(180&lt;em&gt;deg-math.pi/n11)&lt;/em&gt;n11/n13)&lt;/p&gt;
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
 
 &lt;script src="../data/Brython-3.3.1/brython.js"&gt;&lt;/script&gt;
@@ -159,11 +162,11 @@ canvas_size = canvas.height*0.5
 r17 = canvas_size*0.8*n17/(n17+n11+n13)
 r11 = canvas_size*0.8*n11/(n17+n11+n13)
 r13 = canvas_size*0.8*n13/(n17+n11+n13)
-x17 = x - r17
+x17 = x - r17 - 2*r11
 y17 = y
-x11 = x + r11
+x11 = x - r11
 y11 = y
-x13 = x - r17*2 - r13
+x13 = x + r13
 y13 = y
 # 齒數
 n = 17
@@ -171,11 +174,32 @@ n = 17
 pa = 20
 rot = 90
 #gear1 = Spur(ctx).Gear(x, y, r, n, pa, "gray" , rot)
+ctx.save()
+ctx.translate(x17,y17)
+ctx.rotate(90*deg)
+ctx.translate(-x17,-y17)
 gear17 = Spur(ctx).Gear(x17, y17, r17, n17, pa, "gray" , rot)
+ctx.restore()
+
+ctx.save()
+ctx.translate(x11,y11)
+ctx.rotate(-90*deg-math.pi/n11)
+ctx.translate(-x11,-y11)
 gear11 = Spur(ctx).Gear(x11, y11, r11, n11, pa, "blue" , rot)
+ctx.restore()
+
+ctx.save()
+ctx.translate(x13,y13)
+ctx.rotate(-90*deg-math.pi/n13+(180*deg-math.pi/n11)*n11/n13)
+ctx.translate(-x13,-y13)
 gear13 = Spur(ctx).Gear(x13, y13, r13, n13, pa, "blue" , rot)
+ctx.restore()
+
 div = doc["onegear_div"]
 div &lt;= str(canvas.width) + "l" + str(canvas.height)
+
+
+
 &lt;/script&gt;</summary><category term="簡報"></category></entry><entry><title>第十一周作業</title><link href="./brython-programming.html" rel="alternate"></link><published>2017-04-27T11:00:00+08:00</published><updated>2017-04-27T11:00:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-04-27:./brython-programming.html</id><summary type="html">&lt;p&gt;加減乘除實作
 &lt;/p&gt;
 &lt;h2&gt;加減乘除實作影片&lt;/h2&gt;

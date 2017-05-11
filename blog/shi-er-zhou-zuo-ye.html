@@ -317,7 +317,10 @@ init_mathjax();
                 </div>
                 <p>齒輪各部位定義
 </p>
-<p>利用漸開線原理, 以 Brython 繪製單一正齒輪廓:</p>
+<p>利用漸開線原理, 以 Brython 繪製單(17t-11t-13t)正齒輪廓:</p>
+<p>第1齒輪從順時鐘轉 90 度之後, 必須配合目前的標記線所作
+地2齒要配合第一齒逆時針90度之後要在+上原本的一齒所以(-90<em>deg-math.pi/n11)
+第3齒要配合第2齒+原本一齒(-90</em>deg-math.pi/n13)之後再配合第一齒+上半圈扣掉第一齒輪的1齒在乘上n11/n13(180<em>deg-math.pi/n11)</em>n11/n13)</p>
 <!-- 導入 Brython 標準程式庫 -->
 
 <script src="../data/Brython-3.3.1/brython.js"></script>
@@ -475,11 +478,11 @@ canvas_size = canvas.height*0.5
 r17 = canvas_size*0.8*n17/(n17+n11+n13)
 r11 = canvas_size*0.8*n11/(n17+n11+n13)
 r13 = canvas_size*0.8*n13/(n17+n11+n13)
-x17 = x - r17
+x17 = x - r17 - 2*r11
 y17 = y
-x11 = x + r11
+x11 = x - r11
 y11 = y
-x13 = x - r17*2 - r13
+x13 = x + r13
 y13 = y
 # 齒數
 n = 17
@@ -487,11 +490,32 @@ n = 17
 pa = 20
 rot = 90
 #gear1 = Spur(ctx).Gear(x, y, r, n, pa, "gray" , rot)
+ctx.save()
+ctx.translate(x17,y17)
+ctx.rotate(90*deg)
+ctx.translate(-x17,-y17)
 gear17 = Spur(ctx).Gear(x17, y17, r17, n17, pa, "gray" , rot)
+ctx.restore()
+
+ctx.save()
+ctx.translate(x11,y11)
+ctx.rotate(-90*deg-math.pi/n11)
+ctx.translate(-x11,-y11)
 gear11 = Spur(ctx).Gear(x11, y11, r11, n11, pa, "blue" , rot)
+ctx.restore()
+
+ctx.save()
+ctx.translate(x13,y13)
+ctx.rotate(-90*deg-math.pi/n13+(180*deg-math.pi/n11)*n11/n13)
+ctx.translate(-x13,-y13)
 gear13 = Spur(ctx).Gear(x13, y13, r13, n13, pa, "blue" , rot)
+ctx.restore()
+
 div = doc["onegear_div"]
 div <= str(canvas.width) + "l" + str(canvas.height)
+
+
+
 </script>
             </div>
             <!-- /.entry-content -->
