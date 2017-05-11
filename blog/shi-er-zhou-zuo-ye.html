@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>第十周作業-1 - 2016Fall 電腦輔助設計實習 (虎尾科大MDE)</title>
+    <title>十二周作業 - 2016Fall 電腦輔助設計實習 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -166,20 +166,20 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
-<link rel="canonical" href="./di-shi-zhou-zuo-ye-1.html">
+<link rel="canonical" href="./shi-er-zhou-zuo-ye.html">
 
         <meta name="author" content="40223154" />
-        <meta name="keywords" content="HW" />
-        <meta name="description" content="1.brython window.onload=function(){ // 設定 data/py 為共用程式路徑 brython({debug:1, pythonpath:[&#39;./../data/py&#39;]}); } from browser import document as doc from browser import html import math container = doc[&#39;container&#39;] degree = math.pi/180 def button1(event): a = input(&#34;give me a&#34;) container" />
+        <meta name="keywords" content="簡報" />
+        <meta name="description" content="齒輪各部位定義" />
 
         <meta property="og:site_name" content="2016Fall 電腦輔助設計實習 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="第十周作業-1"/>
-        <meta property="og:url" content="./di-shi-zhou-zuo-ye-1.html"/>
-        <meta property="og:description" content="1.brython window.onload=function(){ // 設定 data/py 為共用程式路徑 brython({debug:1, pythonpath:[&#39;./../data/py&#39;]}); } from browser import document as doc from browser import html import math container = doc[&#39;container&#39;] degree = math.pi/180 def button1(event): a = input(&#34;give me a&#34;) container"/>
-        <meta property="article:published_time" content="2017-04-30" />
-            <meta property="article:section" content="HW" />
-            <meta property="article:tag" content="HW" />
+        <meta property="og:title" content="十二周作業"/>
+        <meta property="og:url" content="./shi-er-zhou-zuo-ye.html"/>
+        <meta property="og:description" content="齒輪各部位定義"/>
+        <meta property="article:published_time" content="2017-05-11" />
+            <meta property="article:section" content="作業" />
+            <meta property="article:tag" content="簡報" />
             <meta property="article:author" content="40223154" />
 
 
@@ -261,10 +261,10 @@ init_mathjax();
                          <li><a href="./pages/about/">
                              About
                           </a></li>
-                        <li class="active">
+                        <li >
                             <a href="./category/hw.html">Hw</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="./category/zuo-ye.html">作業</a>
                         </li>
             </ul>
@@ -290,10 +290,10 @@ init_mathjax();
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="./di-shi-zhou-zuo-ye-1.html"
+                    <a href="./shi-er-zhou-zuo-ye.html"
                        rel="bookmark"
-                       title="Permalink to 第十周作業-1">
-                        第十周作業-1
+                       title="Permalink to 十二周作業">
+                        十二周作業
                     </a>
                 </h1>
             </header>
@@ -303,7 +303,7 @@ init_mathjax();
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-04-30T12:00:00+08:00"> 週日 30 四月 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-05-11T10:44:00+08:00"> 週四 11 五月 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="./author/40223154.html"><i class="fa fa-user"></i> 40223154</a>
@@ -311,12 +311,15 @@ init_mathjax();
 
 
 <span class="label label-default">Tags</span>
-	<a href="./tag/hw.html">HW</a>
+	<a href="./tag/jian-bao.html">簡報</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>1.brython
-<!-- 導入 Brython 標準程式庫 --></p>
+                <p>齒輪各部位定義
+</p>
+<p>利用漸開線原理, 以 Brython 繪製單一正齒輪廓:</p>
+<!-- 導入 Brython 標準程式庫 -->
+
 <script src="../data/Brython-3.3.1/brython.js"></script>
 
 <script src="../data/Brython-3.3.1/brython_stdlib.js"></script>
@@ -330,25 +333,166 @@ brython({debug:1, pythonpath:['./../data/py']});
 }
 </script>
 
-<!-- 以下實際利用  Brython 畫四連桿 trace point 路徑-->
+<!-- 以下實際利用  Brython 繪圖-->
 
-<!--<canvas id="w10" width="800" height="600"></canvas>-->
+<canvas id="onegear" width="800" height="600"></canvas>
 
-<div id="container" width="600" height="400"></div>
+<div id="onegear_div" width="800" height="20"></div>
 
 <script type="text/python3">
 from browser import document as doc
-from browser import html
 import math
-container = doc['container']
-degree = math.pi/180
-def button1(event):
-    a = input("give me a")
-    container <= str(math.cos(60*degree)+float(a))
-doc["button1"].bind("click", button1)
-</script>
+# deg 為角度轉為徑度的轉換因子
+deg = math.pi/180.
+# 定義 Spur 類別
+class Spur(object):
+    def __init__(self, ctx):
+        self.ctx = ctx
 
-<p><button id="button1">按下取 a 值</button></p>
+    def create_line(self, x1, y1, x2, y2, width=3, fill="red"):
+        self.ctx.beginPath()
+        self.ctx.lineWidth = width
+        self.ctx.moveTo(x1, y1)
+        self.ctx.lineTo(x2, y2)
+        self.ctx.strokeStyle = fill
+        self.ctx.stroke()
+    #
+    # 定義一個繪正齒輪的繪圖函式
+    # midx 為齒輪圓心 x 座標
+    # midy 為齒輪圓心 y 座標
+    # rp 為節圓半徑, n 為齒數
+    # pa 為壓力角 (deg)
+    # rot 為旋轉角 (deg)
+    # 已經針對 n 大於等於 52 齒時的繪圖錯誤修正, 因為 base circle 與齒根圓大小必須進行判斷
+    def Gear(self, midx, midy, rp, n=17, pa=20, color="black" , rot):
+        # 齒輪漸開線分成 15 線段繪製
+        imax = 15
+        # 在輸入的畫布上繪製直線, 由圓心到節圓 y 軸頂點畫一直線
+        self.create_line(midx, midy, midx, midy-rp)
+        # 畫出 rp 圓, 畫圓函式尚未定義
+        #create_oval(midx-rp, midy-rp, midx+rp, midy+rp, width=2)
+        # a 為模數 (代表公制中齒的大小), 模數為節圓直徑(稱為節徑)除以齒數
+        # 模數也就是齒冠大小
+        a=2*rp/n
+        # d 為齒根大小, 為模數的 1.157 或 1.25倍, 這裡採 1.25 倍
+        d=2.5*rp/n
+        # ra 為齒輪的外圍半徑
+        ra=rp+a
+        # 畫出 ra 圓, 畫圓函式尚未定義
+        #create_oval(midx-ra, midy-ra, midx+ra, midy+ra, width=1)
+        # rb 則為齒輪的基圓半徑
+        # 基圓為漸開線長齒之基準圓
+        rb=rp*math.cos(pa*deg)
+        # 畫出 rb 圓 (基圓), 畫圓函式尚未定義
+        #create_oval(midx-rb, midy-rb, midx+rb, midy+rb, width=1)
+        # rd 為齒根圓半徑
+        rd=rp-d
+        # 當 rd 大於 rb 時, 漸開線並非畫至 rb, 而是 rd
+        # 畫出 rd 圓 (齒根圓), 畫圓函式尚未定義
+        #create_oval(midx-rd, midy-rd, midx+rd, midy+rd, width=1)
+        # dr 則為基圓到齒頂圓半徑分成 imax 段後的每段半徑增量大小
+        # 將圓弧分成 imax 段來繪製漸開線
+        # 當 rd 大於 rb 時, 漸開線並非畫至 rb, 而是 rd
+        if rd>rb:
+            dr = (ra-rd)/imax
+        else:
+            dr=(ra-rb)/imax
+        # tan(pa*deg)-pa*deg 為漸開線函數
+        sigma=math.pi/(2*n)+math.tan(pa*deg)-pa*deg
+        for j in range(n):
+            ang=-2.*j*math.pi/n+sigma
+            ang2=2.*j*math.pi/n+sigma
+            lxd=midx+rd*math.sin(ang2-2.*math.pi/n)
+            lyd=midy-rd*math.cos(ang2-2.*math.pi/n)
+            for i in range(imax+1):
+                # 當 rd 大於 rb 時, 漸開線並非畫至 rb, 而是 rd
+                if rd>rb:
+                    r=rd+i*dr
+                else:
+                    r=rb+i*dr
+                theta=math.sqrt((r*r)/(rb*rb)-1.)
+                alpha=theta-math.atan(theta)
+                xpt=r*math.sin(alpha-ang)
+                ypt=r*math.cos(alpha-ang)
+                xd=rd*math.sin(-ang)
+                yd=rd*math.cos(-ang)
+                # i=0 時, 繪線起點由齒根圓上的點, 作為起點
+                if(i==0):
+                    last_x = midx+xd
+                    last_y = midy-yd
+                # 由左側齒根圓作為起點, 除第一點 (xd,yd) 齒根圓上的起點外, 其餘的 (xpt,ypt)則為漸開線上的分段點
+                self.create_line((midx+xpt),(midy-ypt),(last_x),(last_y),fill=color)
+                # 最後一點, 則為齒頂圓
+                if(i==imax):
+                    lfx=midx+xpt
+                    lfy=midy-ypt
+                last_x = midx+xpt
+                last_y = midy-ypt
+            # the line from last end of dedendum point to the recent
+            # end of dedendum point
+            # lxd 為齒根圓上的左側 x 座標, lyd 則為 y 座標
+            # 下列為齒根圓上用來近似圓弧的直線
+            self.create_line((lxd),(lyd),(midx+xd),(midy-yd),fill=color)
+            for i in range(imax+1):
+                # 當 rd 大於 rb 時, 漸開線並非畫至 rb, 而是 rd
+                if rd>rb:
+                    r=rd+i*dr
+                else:
+                    r=rb+i*dr
+                theta=math.sqrt((r*r)/(rb*rb)-1.)
+                alpha=theta-math.atan(theta)
+                xpt=r*math.sin(ang2-alpha)
+                ypt=r*math.cos(ang2-alpha)
+                xd=rd*math.sin(ang2)
+                yd=rd*math.cos(ang2)
+                # i=0 時, 繪線起點由齒根圓上的點, 作為起點
+                if(i==0):
+                    last_x = midx+xd
+                    last_y = midy-yd
+                # 由右側齒根圓作為起點, 除第一點 (xd,yd) 齒根圓上的起點外, 其餘的 (xpt,ypt)則為漸開線上的分段點
+                self.create_line((midx+xpt),(midy-ypt),(last_x),(last_y),fill=color)
+                # 最後一點, 則為齒頂圓
+                if(i==imax):
+                    rfx=midx+xpt
+                    rfy=midy-ypt
+                last_x = midx+xpt
+                last_y = midy-ypt
+            # lfx 為齒頂圓上的左側 x 座標, lfy 則為 y 座標
+            # 下列為齒頂圓上用來近似圓弧的直線
+            self.create_line(lfx,lfy,rfx,rfy,fill=color)
+canvas = doc['onegear']
+ctx = canvas.getContext("2d")
+
+x = (canvas.width)/2
+y = (canvas.height)/2
+r = 0.8*(canvas.height/2)/2
+
+#r17 , r11
+n17 = 17
+n11 = 11
+n13 = 13
+canvas_size = canvas.height*0.5
+r17 = canvas_size*0.8*n17/(n17+n11+n13)
+r11 = canvas_size*0.8*n11/(n17+n11+n13)
+r13 = canvas_size*0.8*n13/(n17+n11+n13)
+x17 = x - r17
+y17 = y
+x11 = x + r11
+y11 = y
+x13 = x - r17*2 - r13
+y13 = y
+# 齒數
+n = 17
+# 壓力角
+pa = 20
+rot = 90
+#gear1 = Spur(ctx).Gear(x, y, r, n, pa, "gray" , rot)
+gear17 = Spur(ctx).Gear(x17, y17, r17, n17, pa, "gray" , rot)
+gear11 = Spur(ctx).Gear(x11, y11, r11, n11, pa, "blue" , rot)
+gear13 = Spur(ctx).Gear(x13, y13, r13, n13, pa, "blue" , rot)
+div = doc["onegear_div"]
+div <= str(canvas.width) + "l" + str(canvas.height)
+</script>
             </div>
             <!-- /.entry-content -->
         </article>
@@ -364,13 +508,18 @@ doc["button1"].bind("click", button1)
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="./di-shi-zhou-zuo-ye-1.html">
-                            第十周作業-1
+                        <a href="./shi-er-zhou-zuo-ye.html">
+                            十二周作業
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./di-shi-yi-zhou-zuo-ye-1.html">
+                            第十一周作業-1
                         </a>
                     </li>
                     <li class="list-group-item">
                         <a href="./brython-programming.html">
-                            第十周作業
+                            第十一周作業
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -381,11 +530,6 @@ doc["button1"].bind("click", button1)
                     <li class="list-group-item">
                         <a href="./di-liu-zhou-zuo-ye.html">
                             第六周作業
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="./di-wu-zhou-zuo-ye.html">
-                            第五周作業
                         </a>
                     </li>
                 </ul>
