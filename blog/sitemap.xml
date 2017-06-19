@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./</loc>
-<lastmod>2017-06-08T11:20:31-00:00</lastmod>
+<lastmod>2017-06-20T00:11:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./archives.html</loc>
-<lastmod>2017-06-08T11:20:31-00:00</lastmod>
+<lastmod>2017-06-20T00:11:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tags.html</loc>
-<lastmod>2017-06-08T11:20:31-00:00</lastmod>
+<lastmod>2017-06-20T00:11:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./categories.html</loc>
-<lastmod>2017-06-08T11:20:31-00:00</lastmod>
+<lastmod>2017-06-20T00:11:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./pages/about/</loc>
-<lastmod>2017-06-08T09:27:34+08:00</lastmod>
+<lastmod>2017-06-19T23:28:53+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./協同查驗與自評.html</loc>
+<lastmod>2017-06-19T23:41:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -116,6 +123,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>./category/about.html</loc>
+<lastmod>2017-06-19T23:41:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>./category/hw.html</loc>
 <lastmod>2017-04-30T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -130,8 +144,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>./tag/brython-w10-1.html</loc>
-<lastmod>2017-04-30T12:00:00+08:06</lastmod>
+<loc>./tag/xie-tong-cha-yan-yu-zi-ping-w17.html</loc>
+<lastmod>2017-06-19T23:41:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -139,6 +153,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>./tag/jian-bao.html</loc>
 <lastmod>2017-06-01T10:44:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./tag/brython-w10-1.html</loc>
+<lastmod>2017-04-30T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -152,7 +173,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./author/40223154.html</loc>
-<lastmod>2017-06-01T10:44:00+08:06</lastmod>
+<lastmod>2017-06-19T23:41:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
