@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./</loc>
-<lastmod>2017-06-22T07:28:15-00:00</lastmod>
+<lastmod>2017-06-22T07:58:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./archives.html</loc>
-<lastmod>2017-06-22T07:28:15-00:00</lastmod>
+<lastmod>2017-06-22T07:58:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tags.html</loc>
-<lastmod>2017-06-22T07:28:15-00:00</lastmod>
+<lastmod>2017-06-22T07:58:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./categories.html</loc>
-<lastmod>2017-06-22T07:28:15-00:00</lastmod>
+<lastmod>2017-06-22T07:58:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -165,13 +165,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>./tag/brython-w10-1.html</loc>
-<lastmod>2017-04-30T12:00:00+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>./tag/brython-w10.html</loc>
 <lastmod>2017-04-27T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -181,6 +174,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>./tag/jian-bao.html</loc>
 <lastmod>2017-06-01T10:44:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./tag/brython-w10-1.html</loc>
+<lastmod>2017-04-30T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
