@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall 電腦輔助設計實習 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2017-06-21T10:44:00+08:00</updated><entry><title>W17行走機構2D靜態繪圖</title><link href="./w17xing-zou-ji-gou-2djing-tai-hui-tu.html" rel="alternate"></link><published>2017-06-21T10:44:00+08:00</published><updated>2017-06-21T10:44:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-06-21:./w17xing-zou-ji-gou-2djing-tai-hui-tu.html</id><summary type="html">&lt;p&gt;Title:W17行走機構2D靜態繪圖
-Date: 2017-06-21 23:00
-Category: About
-Tags:  協同查驗與自評-W17
-Slug: 協同查驗與自評
-Author: 40223154&lt;/p&gt;
-&lt;p&gt;W17行走機構2D靜態繪圖&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall 電腦輔助設計實習 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2017-06-21T10:44:00+08:00</updated><entry><title>W17行走機構2D靜態繪圖</title><link href="./w17xing-zou-ji-gou-2djing-tai-hui-tu.html" rel="alternate"></link><published>2017-06-21T10:44:00+08:00</published><updated>2017-06-21T10:44:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-06-21:./w17xing-zou-ji-gou-2djing-tai-hui-tu.html</id><summary type="html">&lt;p&gt;W17行走機構2D靜態繪圖&lt;/p&gt;
 
 
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
@@ -97,7 +91,8 @@ ctx.closePath()
 &lt;p&gt;&lt;/a&gt; from &lt;a href="https://github.com/s40223154/2017springvcp_hw/tree/gh-pages/final"&gt;https://github.com/s40223154/2017springvcp_hw/tree/gh-pages/final&lt;/a&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
 &lt;h4&gt;2.   在各自的網誌上，以"W17行走機構2D靜態繪圖"為標題，以brython畫出行走機構示意圖。&lt;/h4&gt;
 &lt;h4&gt;3.   在各自倉儲中將 https://github.com/scrum-1/cdbw17 倉儲納入作為w17子目錄，並設法導入其中的script1.py進行axises()繪圖韓式的呼叫，在任務2的圖中&lt;/h4&gt;
-&lt;p&gt;畫出坐標軸。&lt;/p&gt;
+&lt;p&gt;畫出坐標軸。
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/vNfXGhBtKjg" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;h4&gt;4.   在各自的網誌中設法動態顯示出任務一所完成的零組件。&lt;/h4&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/rJI0GtJEifc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
