@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>第四周作業 - 2016Fall 電腦輔助設計實習 (虎尾科大MDE)</title>
+    <title>W17行走機構2D靜態繪圖 - 2016Fall 電腦輔助設計實習 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -166,20 +166,20 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
-<link rel="canonical" href="./di-si-zhou-zuo-ye.html">
+<link rel="canonical" href="./w17xing-zou-ji-gou-2djing-tai-hui-tu.html">
 
         <meta name="author" content="40223154" />
-        <meta name="keywords" content="簡報" />
-        <meta name="description" content="Hyperworks 套件過程與心得 hyperworks下載影片" />
+        <meta name="keywords" content="協同查驗與自評-W17" />
+        <meta name="description" content="Title:W17行走機構2D靜態繪圖 Date: 2017-06-21 23:00 Category: About Tags: 協同查驗與自評-W17 Slug: 協同查驗與自評 Author: 40223154 W17行走機構2D靜態繪圖" />
 
         <meta property="og:site_name" content="2016Fall 電腦輔助設計實習 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="第四周作業"/>
-        <meta property="og:url" content="./di-si-zhou-zuo-ye.html"/>
-        <meta property="og:description" content="Hyperworks 套件過程與心得 hyperworks下載影片"/>
-        <meta property="article:published_time" content="2017-03-24" />
-            <meta property="article:section" content="作業" />
-            <meta property="article:tag" content="簡報" />
+        <meta property="og:title" content="W17行走機構2D靜態繪圖"/>
+        <meta property="og:url" content="./w17xing-zou-ji-gou-2djing-tai-hui-tu.html"/>
+        <meta property="og:description" content="Title:W17行走機構2D靜態繪圖 Date: 2017-06-21 23:00 Category: About Tags: 協同查驗與自評-W17 Slug: 協同查驗與自評 Author: 40223154 W17行走機構2D靜態繪圖"/>
+        <meta property="article:published_time" content="2017-06-21" />
+            <meta property="article:section" content="期末作業" />
+            <meta property="article:tag" content="協同查驗與自評-W17" />
             <meta property="article:author" content="40223154" />
 
 
@@ -267,10 +267,10 @@ init_mathjax();
                         <li >
                             <a href="./category/hw.html">Hw</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="./category/qi-mo-zuo-ye.html">期末作業</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="./category/zuo-ye.html">作業</a>
                         </li>
             </ul>
@@ -296,10 +296,10 @@ init_mathjax();
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="./di-si-zhou-zuo-ye.html"
+                    <a href="./w17xing-zou-ji-gou-2djing-tai-hui-tu.html"
                        rel="bookmark"
-                       title="Permalink to 第四周作業">
-                        第四周作業
+                       title="Permalink to W17行走機構2D靜態繪圖">
+                        W17行走機構2D靜態繪圖
                     </a>
                 </h1>
             </header>
@@ -309,7 +309,7 @@ init_mathjax();
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-03-24T12:08:00+08:00"> Fri 24 March 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-06-21T10:44:00+08:00"> Wed 21 June 2017</time>
     </span>
             <span class="label label-default">By</span>
             <a href="./author/40223154.html"><i class="fa fa-user"></i> 40223154</a>
@@ -317,22 +317,93 @@ init_mathjax();
 
 
 <span class="label label-default">Tags</span>
-	<a href="./tag/jian-bao.html">簡報</a>
+	<a href="./tag/xie-tong-cha-yan-yu-zi-ping-w17.html">協同查驗與自評-W17</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>Hyperworks 套件過程與心得 
-hyperworks下載影片</p>
+                <p>Title:W17行走機構2D靜態繪圖
+Date: 2017-06-21 23:00
+Category: About
+Tags:  協同查驗與自評-W17
+Slug: 協同查驗與自評
+Author: 40223154</p>
+<p>W17行走機構2D靜態繪圖</p>
 
 
-<ol>
-<li>Hyperworks 套件過程與心得 </li>
-<li>為各班各組在 https://mde2a2.kmol.info 主機上建立 cdg5, 用來管理各組協同產品設計實習過程中的純文件檔案,建立各週wiki</li>
-</ol>
-<h2>HYPERWORKS安裝心得</h2>
-<p>安裝此套件非常複雜，需要先辦帳號辦完還不能馬上下載，他會寄一組網址到你的信箱，要去信箱收件打開才能下載，而且他還必須下載一個HyperWorks Student Edition的 License這個沒下載的話會一直顯示出找不到 </p>
-<p>hyperworks下載</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tmuroV_YeYE" frameborder="0" allowfullscreen></iframe>
+<!-- 導入 Brython 標準程式庫 -->
+
+<p><script src="../data/Brython-3.3.1/brython.js"></script>
+<script src="../data/Brython-3.3.1/brython_stdlib.js"></script></p>
+<!-- 啟動 Brython -->
+
+<script>
+window.onload=function(){
+// 設定 data/py 為共用程式路徑
+brython({debug:1, pythonpath:['./../data/py']});
+}
+</script>
+
+<!-- 以下實際利用  Brython 繪圖-->
+
+<canvas id="onegear2" width="800" height="600"></canvas>
+
+<div id="onegear_div" width="800" height="20"></div>
+
+<script type="text/python3">
+
+from browser import document
+import math
+# 準備繪圖畫布
+'''
+canvas = document["canvas1"]
+ctx = canvas.getContext("2d")
+'''
+
+def axises(ctx):
+    ctx.beginPath()
+    # 設定線的寬度為 5 個單位
+    ctx.lineWidth = 5
+    # 將畫筆移動到 (0, 0) 座標點
+    ctx.moveTo(0, 0)
+    # 然後畫直線到 (100, 0) 座標點
+    ctx.strokeStyle = "red"
+    ctx.lineTo(100, 0)
+    ctx.lineTo(90, 10)
+    ctx.stroke()
+    ctx.closePath()
+
+    ctx.beginPath()
+    # 畫右上左下的斜線
+    ctx.moveTo(0, 0)
+    ctx.strokeStyle = "green"
+    ctx.lineTo(0, 100)
+    ctx.lineTo(10, 90)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    #ctx.strokeStyle = "blue"
+    # 實際執行畫線
+    ctx.stroke()
+    ctx.closePath()
+'''
+axises(ctx)
+# 以下可以利用 ctx 物件進行畫圖
+# 先畫一條直線
+ctx.beginPath()
+# 設定線的寬度為 1 個單位
+ctx.lineWidth = 1
+# 將畫筆移動到 (100, 100) 座標點
+ctx.moveTo(100, 100)
+# 然後畫直線到 (150, 200) 座標點
+ctx.lineTo(150, 200)
+# 畫右上左下的斜線
+ctx.moveTo(150, 100)
+ctx.lineTo(100, 200)
+# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+ctx.strokeStyle = "blue"
+# 實際執行畫線
+ctx.stroke()
+ctx.closePath()
+'''
+</script>
             </div>
             <!-- /.entry-content -->
         </article>
